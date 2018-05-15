@@ -56,6 +56,16 @@ print_in_binary(const void* data, size_t size) {
         }
     }
 }
+
+struct Student {
+    char name[17];
+    uint16_t year;
+    float sred_ball;
+    uint8_t sex:1;
+    int classes;
+    Student* starosta;
+};
+
 int main(){
     char operand2;
     uint16_t operand1,operand3,res;
@@ -136,4 +146,15 @@ cin>>operand1>>operand2>>operand3;
         print_in_binary(&res,sizeof(res));
 
     }
+    Student students[3]={
+            { "Fam1",2017,4.1,0,7,nullptr},
+            { "Fam2",2017,4.9,1,6,&students[0]},
+            {"Fam",2016,3.6,0,8,&students[1]}
+    };
+    cout<<"Adress of array: "<<&students<<"\n";
+    cout<<"size of array:sizeof(students)<<\n";
+cout<<"\t Adress of element:"<<"\t size of element:\n";
+    for (int i=0;i<3;i++){
+        cout<<i<<"\t"<<&students[i]<<"\t\t"<<sizeof(students[i]);
+    cout<<"\n";}
     return 0;}
