@@ -163,4 +163,10 @@ cout<<"\t Adress of element:"<<"\t size of element:\n";
     cout<<sizeof(students[0].name)<<"  "<<"\t"<<"               "<<offsetof(struct
             Student,name);
     cout<<"\n";
+    cout<<"Name:\n";
+    cout<<"Binary\n";
+    print_in_binary(students[0].name,sizeof(students[0].name));
+    cout<<"\n hex:\n";
+    print_in_hex(students[0].name,sizeof(students[0].name));
+    cout<<"\n";
     return 0;}
