@@ -28,9 +28,37 @@ print_in_hex(const void* data, size_t size) {
         }
     }
 }
+char bit_digit(uint8_t byte, uint8_t bit) {
+    if (byte & (0x1 << bit)) {
+        return '1';
+    }
+    return '0';
+}
+void
+print_in_binary(uint8_t byte) {
+    for (uint8_t bit = 7; bit > 0; bit--) {
+        cout << bit_digit(byte, bit);
+    }cout<<bit_digit(byte,0);
 
+}
+void
+print_in_binary(const void* data, size_t size) {
+    const uint8_t* bytes = as_bytes(data);
+    for (size_t i = 0; i < size; i++) {
+        print_in_binary(bytes[i]);
 
+        // Для удобства чтения: пробелы между байтами, по 4 байта на строку.
+        if ((i + 1) % 4 == 0) {
+            cout << '\n';
+        }
+        else {
+            cout << ' ';
+        }
+    }
+}
 int main(){
+    char operand2;
+    uint16_t operand1,operand3,res;
     assert(nibble_to_hex(0x0) == '0');
     assert(nibble_to_hex(0x1) == '1');
     assert(nibble_to_hex(0x2) == '2');
@@ -51,4 +79,61 @@ int main(){
     cout << "u32 bytes: ";
     print_in_hex(&u32, sizeof(u32));
     cout << '\n';
+    uint8_t u8=3;
+    print_in_binary(&u8, sizeof(u8));
+cin>>operand1>>operand2>>operand3;
+    if (operand2=='&')
+    {
+        res=operand1&operand3;
+        print_in_hex(&operand1,sizeof(operand1));
+        cout<<"&";
+        print_in_hex(&operand3,sizeof
+        (operand1));
+        cout<<"=";
+        print_in_hex(&res,sizeof(res));
+        cout<<'\n';
+        print_in_binary(&operand1,sizeof(operand1));
+        cout<<"&";
+        print_in_binary(&operand3,sizeof
+        (operand1));
+        cout<<"=";
+        print_in_binary(&res,sizeof(res));
+
+    }
+    if (operand2=='|')
+    {
+        res=operand1|operand3;
+        print_in_hex(&operand1,sizeof(operand1));
+        cout<<"|";
+        print_in_hex(&operand3,sizeof
+        (operand1));
+        cout<<"=";
+        print_in_hex(&res,sizeof(res));
+        cout<<'\n';
+        print_in_binary(&operand1,sizeof(operand1));
+        cout<<"|";
+        print_in_binary(&operand3,sizeof
+        (operand1));
+        cout<<"=";
+        print_in_binary(&res,sizeof(res));
+
+    }
+    if (operand2=='^')
+    {
+        res=operand1^operand3;
+        print_in_hex(&operand1,sizeof(operand1));
+        cout<<"^";
+        print_in_hex(&operand3,sizeof
+        (operand1));
+        cout<<"=";
+        print_in_hex(&res,sizeof(res));
+        cout<<'\n';
+        print_in_binary(&operand1,sizeof(operand1));
+        cout<<"^";
+        print_in_binary(&operand3,sizeof
+        (operand1));
+        cout<<"=";
+        print_in_binary(&res,sizeof(res));
+
+    }
     return 0;}
