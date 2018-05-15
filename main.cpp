@@ -1,9 +1,16 @@
 #include <iostream>
 #include <cassert>
 using namespace std;
+
 char nibble_to_hex(uint8_t i){
+    assert(0x0 <= i && i <= 0xf);
     char digits[]="0123456789abcdef";
     return digits[i];}
+void print_to_hex(uint8_t byte)
+{
+    cout<<nibble_to_hex(byte>>4);
+    cout<<nibble_to_hex(byte&0b00001111);}
+}
 int main(){
     assert(nibble_to_hex(0x0) == '0');
     assert(nibble_to_hex(0x1) == '1');
