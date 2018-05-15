@@ -158,8 +158,9 @@ cout<<"\t Adress of element:"<<"\t size of element:\n";
         cout<<i<<"\t"<<&students[i]<<"\t\t"<<sizeof(students[i]);
     cout<<"\n";}
     cout<<"FOR FERST ELEM of array:\n";
-    cout<<"\t Adress of field:"<<"\t size of field:"<<"\t offset:\n";
-    cout<<"NAME:\t"<<&students[0].name<<"t";
-    cout<<sizeof(students[0].name)<<"t<<offsetof(struct Student,name)";
+    cout<<"Adress of field:"<<"\t size of field: "<<"  \t offset:\n";
+    cout<<"NAME:\t"<<&students[0].name<<"\t";
+    cout<<sizeof(students[0].name)<<"  "<<"\t"<<"               "<<offsetof(struct
+            Student,name);
     cout<<"\n";
     return 0;}
