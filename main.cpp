@@ -157,7 +157,7 @@ cout<<"\t Adress of element:"<<"\t size of element:\n";
     for (int i=0;i<3;i++){
         cout<<i<<"\t"<<&students[i]<<"\t\t"<<sizeof(students[i]);
     cout<<"\n";}
-    cout<<"FOR FERST ELEM of array:\n";
+    cout<<"FOR FiRST ELEM of array:\n";
     cout<<"Adress of field:"<<"\t size of field: "<<"  \t offset:\n";
     cout<<"NAME:\t"<<&students[0].name<<"\t";
     cout<<sizeof(students[0].name)<<"  "<<"\t"<<"               "<<offsetof(struct
@@ -169,4 +169,35 @@ cout<<"\t Adress of element:"<<"\t size of element:\n";
     cout<<"\n hex:\n";
     print_in_hex(students[0].name,sizeof(students[0].name));
     cout<<"\n";
+    cout<<"YEAR:\t"<<&students[0].year<<"\t";
+    cout<<sizeof(students[0].year)<<"  "<<"\t"<<"               "<<offsetof(struct
+            Student,year);
+    cout<<"\n";
+    cout<<"Name:\n";
+    cout<<"Binary\n";
+    print_in_binary(&students[0].year,sizeof(students[0].year));
+    cout<<"\n hex:\n";
+    print_in_hex(&students[0].year,sizeof(students[0].year));
+    cout<<"\n";
+    cout<<"SREDBALL:\t"<<&students[0].sred_ball<<"\t";
+    cout<<sizeof(students[0].sred_ball)<<"  "<<"\t"<<"               "<<offsetof(struct
+            Student,name);
+    cout<<"\n";
+    cout<<"Name:\n";
+    cout<<"Binary\n";
+    print_in_binary(&students[0].sred_ball,sizeof(students[0].sred_ball));
+    cout<<"\n hex:\n";
+    print_in_hex(&students[0].sred_ball,sizeof(students[0].sred_ball));
+    cout<<"\n";
+    cout<<"classes:\t"<<&students[0].sred_ball<<"\t";
+    cout<<sizeof(students[0].sred_ball)<<"  "<<"\t"<<"               "<<offsetof(struct
+            Student,name);
+    cout<<"\n";
+    cout<<"Name:\n";
+    cout<<"Binary\n";
+    print_in_binary(&students[0].classes,sizeof(students[0].classes));
+    cout<<"\n hex:\n";
+    print_in_hex(&students[0].classes,sizeof(students[0].classes));
+    cout<<"\n";
+
     return 0;}
